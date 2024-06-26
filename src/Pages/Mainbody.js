@@ -530,16 +530,12 @@ const Mainbody = () => {
                 }
               />
               <Typography variant="caption" display="block" >6 hrs. ago</Typography>
-
             </Stack>
           </ListItem>
         </List>
       </MenuItem>
     </Menu>
-
-
   )
-
 
 
   // Dropdown Pages 
@@ -553,7 +549,7 @@ const Mainbody = () => {
       page: "Accordion"
     },
   ];
-  // ["Badges", "Breadcrumbs", "Buttons", "Cards", "Carousel", "List group", "Modal", "Tabs", "Pagination", "Progress", "Spinners", "Tooltips"];
+  
   const Forms = ["Form Elements", "Form Layouts", "Form Editors", "Form Validation"];
   const Tables = ["General Tables", "Data Tables"];
   const Charts = ["Chart.js", "ApexCharts", "ECharts"];
@@ -612,7 +608,7 @@ const Mainbody = () => {
     <>
 
 
-      <Box sx={{ flexGrow: 1, position: "sticky", top: 0 }} zIndex={1300}>
+      <Box sx={{ flexGrow: 1, position: "sticky", top: 0 }} zIndex={isLG ? 1300 : 1030}>
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static"  >
             <Toolbar >
@@ -736,11 +732,6 @@ const Mainbody = () => {
               </Box>
             </Toolbar>
           </AppBar>
-          {/* {renderMobileMenu}
-          {renderMenu}
-          {messageNotificationMenu}
-          {notificationMenu} */}
-
         </ThemeProvider>
       </Box>
 
@@ -762,8 +753,10 @@ const Mainbody = () => {
           open={open}
         >
 
-          {/* <Hidden lgUp> */}
-            <DrawerHeader  >
+
+          {
+            isLG ? (  <DrawerHeader/>) : (
+              <DrawerHeader  >
               <Stack spacing={1} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <img
                   src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/logo.png"
@@ -796,8 +789,9 @@ const Mainbody = () => {
                 {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
               </IconButton>
             </DrawerHeader>
-          {/* </Hidden> */}
-
+            )
+          }
+           
           <Divider />
 
           <Box sx={{ padding: "20px 0px 70px" }}>
@@ -809,7 +803,6 @@ const Mainbody = () => {
                   </ListItemIcon>
                   <ListItemText primary="Dashboard" />
                 </ListItemButton>
-
               </ListItem>
 
               <ListItem  sx={{ padding: "0px 20px" }}>
@@ -821,6 +814,7 @@ const Mainbody = () => {
                   {expand[1] ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
               </ListItem>
+
               <Collapse in={expand[1]} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding dense>
                   {Components.map((component) => (
@@ -891,7 +885,6 @@ const Mainbody = () => {
               </Collapse>
 
               <ListItem sx={{ padding: "0px 20px" }}>
-                {/* <ListItemButton onClick={handleExpand}> */}
                 <ListItemButton onClick={() => setExpand({ ...DropdownExpand, 4: !expand[4] })}>
                   <ListItemIcon sx={{ minWidth: "30px" }}>
                     <BsBarChart />
@@ -939,7 +932,6 @@ const Mainbody = () => {
                     </ListItem>
 
                   ))}
-
                 </List>
               </Collapse>
 
@@ -993,10 +985,7 @@ const Mainbody = () => {
         {renderMenu}
         {messageNotificationMenu}
         {notificationMenu}
-
-
       </Box>
-
     </>
   )
 }

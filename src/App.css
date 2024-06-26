@@ -17,10 +17,6 @@
 }
 
 
-.MuiDrawer-root .MuiPaper-root.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-    top: 65px!important;
-}
-
 ::-webkit-scrollbar {
     width: 5px;
   }
@@ -79,13 +75,6 @@
   
 }
 
-
-/* @media (max-width : "400px")
-{
-  .form-lable{
-    margin-bottom: 10px;
-  }
-} */
 
 @media (max-width : 400px) {
 
