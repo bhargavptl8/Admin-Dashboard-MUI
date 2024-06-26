@@ -612,7 +612,7 @@ const Mainbody = () => {
     <>
 
 
-      <Box sx={{ flexGrow: 1, position: "sticky", top: 0 }} zIndex={1030}>
+      <Box sx={{ flexGrow: 1, position: "sticky", top: 0 }} zIndex={1300}>
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static"  >
             <Toolbar >
@@ -762,7 +762,7 @@ const Mainbody = () => {
           open={open}
         >
 
-          <Hidden lgUp>
+          {/* <Hidden lgUp> */}
             <DrawerHeader  >
               <Stack spacing={1} direction="row" justifyContent="center" alignItems="center" sx={{ width: "100%" }}>
                 <img
@@ -796,8 +796,7 @@ const Mainbody = () => {
                 {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
               </IconButton>
             </DrawerHeader>
-
-          </Hidden>
+          {/* </Hidden> */}
 
           <Divider />
 
