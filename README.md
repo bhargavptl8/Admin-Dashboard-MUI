@@ -1,0 +1,1 @@
+I'm developing an admin dashboard project using React. The dashboard leverages MUI for UI components, React-Icons for icons, and React-Router-Dom for navigation. This setup ensures a responsive, visually appealing interface with efficient routing for managing various administrative tasks.
