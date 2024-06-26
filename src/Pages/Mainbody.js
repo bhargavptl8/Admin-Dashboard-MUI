@@ -564,7 +564,7 @@ const Mainbody = () => {
       page: "Profile",
      icon : <BsPerson />,
      path: "/user/profile"
-    } : "",
+    } : {},
     {
       page: "Contact",
        icon : <BsEnvelope />,
